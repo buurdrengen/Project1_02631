@@ -30,10 +30,24 @@ def dataLoad(filename):
     data = unfiltered[indexMerg,:]
     
     # Now we must return error-messages when a line is incomplete/missing data. 
-    # Creating 
+    # Creating a list for all lines - REMEMBER 0-index. 
     lines = np.arange(np.size(temp))
-    print(lines)
+    # print(lines)
+    # Using if any() statements, using the indexes from before that are an 'true'/'false'-array, if there is any false statements, it is saved into a new index, which can be accesed from the lines.
+    if any(indexTemp == False):
+        falseindexTemp = (indexTemp == False)
+        print('There is temperatures that does not fit our filters. The problems is in the following line(s), remember 0-index:')
+        print(lines[falseindexTemp])
 
+    if any(indexGrowth == False):
+        falseindexGrowth = (indexGrowth == False)
+        print('There is growth that does not fit our filters. The problems is in the following line(s), remember 0-index:')
+        print(lines[falseindexGrowth])
+    
+    if any(indexBacteria == False):
+        falseindexBacteria = (indexBacteria == False)
+        print('There is bacteria-numbers that does not fit our filters. The problems is in the following line(s), remember 0-index:')
+        print(lines[falseindexBacteria])
 
     return data 
 print(dataLoad('Data_files_for_projects/Bacteria/test.txt'))
