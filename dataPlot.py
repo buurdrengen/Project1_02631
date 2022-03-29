@@ -42,7 +42,7 @@ def dataPlot(data):
     # ax.bar_label(p2,label_type='center')
     # ax.bar_label(p3,label_type='center')
     # ax.bar_label(p4,label_type='center')
-    ax.bar(x_bacteria,y_bacteria)
+    ax.bar(x_bacteria,y_bacteria,color=['red','blue','yellow','green'])
     plt.show()
     
     # print(y_bacteria)
