@@ -1,6 +1,6 @@
 # Data-plot function 
 # 
-# Author: Aksel Buur Christensen, s023947 
+# Author: Aksel Buur Christensen, s203947 
 # 
 import numpy as np 
 import matplotlib.pyplot as plt 
@@ -19,26 +19,32 @@ def dataPlot(data):
     y3 = np.count_nonzero(bacteria == 3)
     y4 = np.count_nonzero(bacteria == 4)
 
-    # Collecting them into an array for plotting. 
-    fig,ax = plt.subplots() 
-    ind = np.arange(4) # The x locations for the groups. 
+    x_bacteria = ['1','2','3','4']
+
+    fig,ax = plt.subplots() # Create a figure with subplots 
     width = 0.5 # The width of the bars
-    y_bacteria = np.array([y1,y2,y3,y4])
-    p1 = ax.bar(ind,y_bacteria[0],width,label='Salmonella enterica',color='red')
-    p2 = ax.bar(ind,y_bacteria[1],width,label='Bacillus cereus',color='green')
-    p3 = ax.bar(ind,y_bacteria[2],width,label='Listeria',color='blue')
-    p4 = ax.bar(ind,y_bacteria[3],width,label='Brochothrix thermosphacta',color='yellow')
+    ind = np.arange(4) # The x locations for the groups. 
+    # br2 = [x + width for x in br1]
+    # br3 = [x + width for x in br2]
+
+    y_bacteria = np.array([y1,y2,y3,y4]) # Create an array with the different types of bacteria. 
+
+    # ax.bar(ind,y_bacteria[0],width,label='Salmonella enterica',color='red')
+    # ax.bar(ind,y_bacteria[1],width,label='Bacillus cereus',color='green')
+    # ax.bar(ind,y_bacteria[2],width,label='Listeria',color='blue')
+    # ax.bar(ind,y_bacteria[3],width,label='Brochothrix thermosphacta',color='yellow')
+
     ax.set_title('Number of bacterias')
     ax.set_ylabel('Number')
     ax.legend()
-    ax.set_xticks(ind,labels=['1','2','3','4'])
-    ax.bar_label(p1,label_type='center')
-    ax.bar_label(p2,label_type='center')
-    ax.bar_label(p3,label_type='center')
-    ax.bar_label(p4,label_type='center')
-    # ax.bar(x_bacteria,y_bacteria)
+    # ax.set_xticks(ind,labels=['1','2','3','4'])
+    # ax.bar_label(p1,label_type='center')
+    # ax.bar_label(p2,label_type='center')
+    # ax.bar_label(p3,label_type='center')
+    # ax.bar_label(p4,label_type='center')
+    ax.bar(x_bacteria,y_bacteria)
     plt.show()
-
+    
     # print(y_bacteria)
     return fig 
 print(dataPlot(dataLoad('Data_files_for_projects/Bacteria/test.txt')))
