@@ -5,6 +5,8 @@ Created on Thu Mar 31 10:01:13 2022
 @author: cglitz
 """
 import numpy as np
+from input_number import inputNumber
+
 
 def displayMenu(options):
 # DISPLAYMENU Displays a menu of options, ask the user to choose an item
