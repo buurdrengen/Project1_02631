@@ -24,4 +24,3 @@ def filterBacteria(data,type):
     datafiltered = data[chosenRow,:]
     print(datafiltered[:,0])
     return datafiltered
-
