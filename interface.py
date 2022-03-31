@@ -16,39 +16,46 @@ from displayMenu import displayMenu
 
 
 # Define menu items
-menuItems = np.array(["Load data", "Filter data", "Display settings", "Generate plots", "Quit"])
+menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
 # Start
 while True:
     # Display menu options and ask user to choose a menu item
     choice = displayMenu(menuItems)
     # Menu item chosen
     # ------------------------------------------------------------------
-    # 1. Enter name
+    # 1. Load data
     if choice == 1:
-    # Ask user to input file name 
+    # Ask user to input file name
+        # function file input 
         filename = input("Please enter the name of the file you want to load: ")
         dataLoad(filename)
     # ------------------------------------------------------------------
-    # 2. Display greeting
+    # 2. Filter data
     elif choice == 2:
-    # Is name empty?
-        if name == "":
-    # Display error message
-            print("Error: Name is empty")
-        else:
-    # Display greeting
-            print("Hello {:s}".format(name))
+    # display filter options
+        filter_menuItems = np.array(["Bacteria type", "Growth rate","Quit"])
+        while True:
+            choice_filter = displayMenu(filter_menuItems)
+        # Menu item chosen
+            if choice_filter ==1:
+                #calls function to filter data for bacteria type 
+            if choice_filter ==2:
+                #calls function that filters data for growth rate
+            if chocie_filter ==3:
+                break
     # ------------------------------------------------------------------
+    # 3. Display statistics
+    elif choice == 3:
+        statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate"])
+        while True:
+            choice_statistics = displayMenu(statistics_menuItems)
+            #compute statistics via dataStatistics function 
+        
+    
+    # ------------------------------------------------------------------
+
     # 3. Quit
     elif choice == 3:
     # End
     break
-
-
-# Menu options
-   # 1. Load data.
-   # 2. Filter data.
-   # 3. Display statistics.
-   # 4. Generate plots
-   # 5. Quit
 
