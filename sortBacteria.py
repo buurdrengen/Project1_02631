@@ -5,7 +5,7 @@
 #
 # 
 ##
-from dataLoad import * 
+#from dataLoad import * 
 def filterBacteria(data,type):
     # This function removes one of the four bacteria types 
     # Input: Data from the bacterias and a type, where: 
@@ -25,4 +25,4 @@ def filterBacteria(data,type):
     datafiltered = data[chosenRow,:]
     print(datafiltered[:,0])
     return datafiltered
-print(filterBacteria(dataLoad('Data_files_for_projects/Bacteria/test.txt'),2))
+#print(filterBacteria(dataLoad('Data_files_for_projects/Bacteria/test.txt'),2))
