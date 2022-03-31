@@ -12,10 +12,10 @@ def inputFilename():
     files = os.listdir(os.getcwd()) # Find all files in the current working directory. 
 
     while True: 
-        filename = str(input('Please input a file. Remember to put .txt after the name.'))
+        filename = str(input('Please input a file. Remember to put .txt after the name:'))
         if filename in files:
             break
         else:
             print('The file could not be found in the current working directory!')
     return filename
-print(inputFilename('Data_files_for_projects/test.txt'))
+# print(inputFilename())
