@@ -55,3 +55,8 @@ def dataStatistics(data, statistic):
     return result
 
 print(dataStatistics(data_file, statistic_test))
+
+
+#datastatistics with filter 
+# if filter is turned on, only statistics of those are calculated because inout file (data) has changed.
+#No change in function required but: description of filter has to be shown while ca 
