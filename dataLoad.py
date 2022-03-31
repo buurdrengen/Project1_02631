@@ -50,4 +50,4 @@ def dataLoad(filename):
         print(lines[falseindexBacteria])
 
     return data 
-print(dataLoad('Data_files_for_projects/Bacteria/test.txt'))
+# print(dataLoad('test.txt'))
