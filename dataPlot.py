@@ -4,7 +4,7 @@
 # 
 import numpy as np 
 import matplotlib.pyplot as plt 
-from dataLoad import * 
+# from dataLoad import * 
 def dataPlot(data):
     # This function makes two plots.
     # 1) A histogram of the numbers of each the four bacterias in the data-file. 
@@ -68,7 +68,7 @@ def dataPlot(data):
     plt.plot(temp_x_2,growth_y_2,label='Bacillus cereus',color='green',linewidth=3)
     plt.plot(temp_x_3,growth_y_3,label='Listeria',color='blue',linewidth=3)
     plt.plot(temp_x_4,growth_y_4,label='Brochothrix thermosphacta',color='yellow',linewidth=3)
-    
+
     ax2.set_title('Growth rate by temperature') # Title for the second subplot
     ax2.set_ylabel('Growth rate') # y-label for the second subplot 
     ax2.set_xlabel('Temperature') # x-label for the second subplot 
@@ -80,4 +80,4 @@ def dataPlot(data):
     plt.show()
 
     return fig 
-print(dataPlot(dataLoad('Data_files_for_projects/Bacteria/test.txt')))
+# print(dataPlot(dataLoad('Data_files_for_projects/Bacteria/test.txt')))
