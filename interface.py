@@ -18,6 +18,13 @@ from filterGrowthrate import filterGrowthrate
 
 # Define menu items
 menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
+# display filter options
+# filter_menuItems = np.array(["Bacteria type", "Growth rate","Quit"])
+# Bacteria types menu
+# bacteriatypes_menuItems = np.array(["Salmonella interica", "Bacillus cereus","Listeria", "Brochotrix thermosphacta"])
+# Statistics menu 
+# statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
+
 # Start
 while True:
     # Display menu options and ask user to choose a menu item
