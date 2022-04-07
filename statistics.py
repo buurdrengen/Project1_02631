@@ -17,10 +17,10 @@ Created on Thu Mar 24 09:40:38 2022
 #Mean Hot Growth rate: Mean (average) Growth rate when Temperature is greater than 50 degrees
 
 import numpy as np
-#from dataLoad import dataLoad
+from dataLoad import dataLoad
 
-#data_file = dataLoad("test.txt")
-#statistic_test = "mean cold growth rate"
+data_file = dataLoad("test.txt")
+statistic_test = "mean cold growth rate"
 
 def dataStatistics(data, statistic):
     
@@ -52,9 +52,10 @@ def dataStatistics(data, statistic):
     else:
         result = "please enter a valid input for statistics"
     
-    return result
+    print(statistic + ' = {:.2f}'.format(dataStatistics(data, statistic)))
 
-#print(dataStatistics(data_file, statistic_test))
+    return result
+print(dataStatistics(data_file, statistic_test))
 
 
 #datastatistics with filter 

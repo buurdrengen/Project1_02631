@@ -15,6 +15,7 @@ from displayMenu import displayMenu
 from statistics import dataStatistics
 from sortBacteria import filterBacteria
 from filterGrowthrate import filterGrowthrate
+from dataPlot import dataPlot
 
 # Define menu items
 menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
@@ -44,7 +45,7 @@ while True:
         try:
             data
         except:
-            print("load a dataset first")
+            print("You need to load a dataset first")
     # display filter options
         filter_menuItems = np.array(["Bacteria type", "Growth rate","Quit"])
         while True:
@@ -52,44 +53,52 @@ while True:
             choice_filter = displayMenu(filter_menuItems)
         # Menu item chosen
             # filters data for bacteria type
-            if choice_filter ==1:
+            if choice_filter == 1:
                 bacteriatypes_menuItems = np.array(["Salmonella interica", "Bacillus cereus","Listeria", "Brochotrix thermosphacta"])
                 while True:
                     # display options for bacteria to filter
                     choice_bacteriafilter = displayMenu(bacteriatypes_menuItems)
                     # returns filtered data set depending on which bacteria type was chosen 
-                if choice_bacteriafilter == 1:
-                    data = filterBacteria(data, 1)
-                elif choice_bacteriafilter == 2:
-                    data = filterBacteria(data, 2)
-                elif choice_bacteriafilter == 3:
-                    data = filterBacteria(data, 3)
-                elif choice_bacteriafilter == 4:
-                    data = filterBacteria(data, 4)            
+                    if choice_bacteriafilter == 1:
+                        data = filterBacteria(data, 1)
+
+                    elif choice_bacteriafilter == 2:
+                        data = filterBacteria(data, 2)
+
+                    elif choice_bacteriafilter == 3:
+                        data = filterBacteria(data, 3)
+
+                    elif choice_bacteriafilter == 4:
+                        data = filterBacteria(data, 4)            
                 #calls function to filter data for growth rate and returns that data
             elif choice_filter ==2:
-                filter_growthrate_data = filterGrowthrate(data)
+               data = filterGrowthrate(data)
             elif choice_filter ==3:
                 break
     # ------------------------------------------------------------------
     # 3. Display statistics
     elif choice == 3:
-        
+        try:
+            data
+        except:
+            print('You need to load a dataset first')
         # display statistics options 
         statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
         # Start 
-        while True:
-            # Display menu options for statistics and ask user to choose a menu item
-            choice_statistics = displayMenu(statistics_menuItems)
-            #compute statistics via dataStatistics function 
-            if choice_statistics == 1:
-                dataStatistics(data,"mean temperature")
-            elif choice_statistics == 2:
-                dataStatistics(data, "mean growth rate")
-            elif choice_statistics == 8:
-                break
-            
-             #print('mean temperature = {:.2f}'.format(dataStatistics(data, "mean temperature")))
+
+        # Display menu options for statistics and ask user to choose a menu item
+        choice_statistics = displayMenu(statistics_menuItems)
+        if choice_statistics == "Quit"
+        #compute statistics via dataStatistics function 
+        print('{} = {:.2f}'.format(dataStatistics(data, statistics_menuItems[choice_statistics-1])))
+        if choice_statistics == 0:
+            dataStatistics(data,"mean temperature")
+
+        elif choice_statistics == 2:
+            dataStatistics(data, "mean growth rate")
+        elif choice_statistics == 8:
+            break 
+             
             
             
                 
@@ -97,10 +106,17 @@ while True:
     # ------------------------------------------------------------------
     # 4. Display plots 
     elif choice == 4: 
-
+        # Check if the data is loaded.
+        try:
+            data 
+        except: 
+            print("You need to load a dataset first")
+            continue
+        # Plot the data 
+        dataPlot(data)
     # 5. Quit
     elif choice == 5:
+        break
     # End
-    break
 
         
