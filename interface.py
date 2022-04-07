@@ -12,7 +12,7 @@ from dataLoad import dataLoad
 #makes sure that valid number is chosen, if not, returns 
 from input_number import inputNumber
 from displayMenu import displayMenu
-from statistics import *
+from statistics import dataStatistics
 from sortBacteria import filterBacteria
 from filterGrowthrate import filterGrowthrate
 
@@ -89,14 +89,17 @@ while True:
             elif choice_statistics == 8:
                 break
             
+             #print('mean temperature = {:.2f}'.format(dataStatistics(data, "mean temperature")))
             
             
                 
     
     # ------------------------------------------------------------------
+    # 4. Display plots 
+    elif choice == 4: 
 
-    # 3. Quit
-    elif choice == 3:
+    # 5. Quit
+    elif choice == 5:
     # End
     break
 
