@@ -98,7 +98,7 @@ while True:
         # print(test)
             if choice_statistics == 1:
                 dataStatistics(data,"mean temperature")
-                print('Mean temperature = {:.2f}'.format(dataStatistics(data, 'mean temperature')))
+                print('Mean temperature = {:.2f} °C'.format(dataStatistics(data, 'mean temperature')))
                 continue
             elif choice_statistics == 2:
                 dataStatistics(data, "mean growth rate")
