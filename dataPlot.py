@@ -44,23 +44,40 @@ def dataPlot(data):
 
     # Sort the temperature/growth rate, by x, y = zip(*sorted(zip(x,y))) documentation: https://docs.python.org/3.5/library/functions.html#zip
     # Bacteria 1
+    temp_x_1 = np.array([])
+    growth_y_1 = np.array([])
     temp_x_1 = bacteria_1[:,0]
     growth_y_1 = bacteria_1[:,1]
+    # temp_x_1 , growth_y_1 = np.argsort(temp_x_1,growth_y_1)
+    # growth_y_1 = np.argsort(growth_y_1)
     temp_x_1 , growth_y_1 = zip(*sorted(zip(temp_x_1,growth_y_1)))
 
     # Bacteria 2 
+    temp_x_2 = np.array([])
+    growth_y_2 = np.array([])
     temp_x_2 = bacteria_2[:,0]
     growth_y_2 = bacteria_2[:,1]
+    # temp_x_2 , growth_y_2 = np.argsort(temp_x_2,growth_y_2)
+    # growth_y_2 = np.argsort(growth_y_2)
     temp_x_2 , growth_y_2 = zip(*sorted(zip(temp_x_2,growth_y_2)))
 
     # Bacteria 3
+    temp_x_3 = np.array([])
+    growth_y_3 = np.array([])
     temp_x_3 = bacteria_3[:,0]
     growth_y_3 = bacteria_3[:,1]
+    # temp_x_3 , growth_y_3 = np.argsort(temp_x_3,growth_y_3)
+    
+    # growth_y_3 = np.argsort(growth_y_3)
     temp_x_3 , growth_y_3 = zip(*sorted(zip(temp_x_3, growth_y_3)))
 
     # Bacteria 4
+    temp_x_4 = np.array([])
+    growth_y_4 = np.array([])
     temp_x_4 = bacteria_4[:,0]
     growth_y_4 = bacteria_4[:,1]
+    # temp_x_4 , growth_y_4 = np.argsort(temp_x_4,growth_y_4)
+    # growth_y_4 = np.argsort(growth_y_4)
     temp_x_4 , growth_y_4 = zip(*sorted(zip(temp_x_4,growth_y_4)))
 
     # Four different plots 

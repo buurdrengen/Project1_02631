@@ -22,5 +22,5 @@ def filterBacteria(data,type):
 
     # The filtered data without the chosen row becomes:
     datafiltered = data[chosenRow,:]
-    print(datafiltered[:,0])
+    # print(datafiltered[:,0])
     return datafiltered

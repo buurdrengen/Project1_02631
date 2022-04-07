@@ -33,7 +33,7 @@ def filterGrowthrate(data):
     # Take all the data from the rows specified from the bounds to use for statistics/plot etc. 
     filteredData = data[growth_row, :]
 
-    return(filteredData)
+    return filteredData
 # print(filterGrowthrate(dataLoad('test.txt')))
     
 
