@@ -46,6 +46,7 @@ while True:
             data
         except:
             print("You need to load a dataset first")
+            continue
     # display filter options
         filter_menuItems = np.array(["Bacteria type", "Growth rate","Quit"])
         while True:
@@ -82,23 +83,28 @@ while True:
             data
         except:
             print('You need to load a dataset first')
+            continue
         # display statistics options 
         statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
         # Start 
 
         # Display menu options for statistics and ask user to choose a menu item
-        choice_statistics = displayMenu(statistics_menuItems)
-        if choice_statistics == "Quit"
+        while True:
+            choice_statistics = displayMenu(statistics_menuItems)
+            if choice_statistics == 8:
+                break
         #compute statistics via dataStatistics function 
-        print('{} = {:.2f}'.format(dataStatistics(data, statistics_menuItems[choice_statistics-1])))
-        if choice_statistics == 0:
-            dataStatistics(data,"mean temperature")
-
-        elif choice_statistics == 2:
-            dataStatistics(data, "mean growth rate")
-        elif choice_statistics == 8:
-            break 
-             
+        # test = dataStatistics(data, statistics_menuItems[choice_statistics-1])
+        # print(test)
+            if choice_statistics == 1:
+                dataStatistics(data,"mean temperature")
+                print('Mean temperature = {:.2f}'.format(dataStatistics(data, 'mean temperature')))
+                continue
+            elif choice_statistics == 2:
+                dataStatistics(data, "mean growth rate")
+                print('Mean growth rate = {:.2f}'.format(dataStatistics(data, 'mean growth rate')))
+                continue
+                           
             
             
                 

@@ -19,8 +19,8 @@ Created on Thu Mar 24 09:40:38 2022
 import numpy as np
 from dataLoad import dataLoad
 
-data_file = dataLoad("test.txt")
-statistic_test = "mean cold growth rate"
+#data_file = dataLoad("test.txt")
+#statistic_test = "mean cold growth rate"
 
 def dataStatistics(data, statistic):
     
@@ -52,10 +52,9 @@ def dataStatistics(data, statistic):
     else:
         result = "please enter a valid input for statistics"
     
-    print(statistic + ' = {:.2f}'.format(dataStatistics(data, statistic)))
-
     return result
-print(dataStatistics(data_file, statistic_test))
+
+#print(dataStatistics(data_file, statistic_test))
 
 
 #datastatistics with filter 
