@@ -41,7 +41,7 @@ def dataLoad(filename):
 
     if any(indexGrowth == False):
         falseindexGrowth = (indexGrowth == False)
-        print('There is growth that does not fit our filters. The problems is in the following line(s), remember 0-index:')
+        print('There is growth rates that does not fit our filters. The problems is in the following line(s), remember 0-index:')
         print(lines[falseindexGrowth])
     
     if any(indexBacteria == False):
