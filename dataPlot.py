@@ -85,10 +85,10 @@ def dataPlot(data):
     # temp_x_4 , growth_y_4 = zip(*sorted(zip(temp_x_4,growth_y_4)))
 
     # Four different plots 
-    plt.plot(temp_x_1,growth_y_1,label='Salmonella enterica',color='red',linewidth=3)
-    plt.plot(temp_x_2,growth_y_2,label='Bacillus cereus',color='green',linewidth=3)
-    plt.plot(temp_x_3,growth_y_3,label='Listeria',color='blue',linewidth=3)
-    plt.plot(temp_x_4,growth_y_4,label='Brochothrix thermosphacta',color='yellow',linewidth=3)
+    # plt.plot(temp_x_1,growth_y_1,label='Salmonella enterica',color='red',linewidth=3)
+    # plt.plot(temp_x_2,growth_y_2,label='Bacillus cereus',color='green',linewidth=3)
+    # plt.plot(temp_x_3,growth_y_3,label='Listeria',color='blue',linewidth=3)
+    # plt.plot(temp_x_4,growth_y_4,label='Brochothrix thermosphacta',color='yellow',linewidth=3)
 
     ax2.set_title('Growth rate by temperature') # Title for the second subplot
     ax2.set_ylabel('Growth rate') # y-label for the second subplot 
