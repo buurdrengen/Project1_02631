@@ -93,7 +93,7 @@ while True:
             print('You need to load a dataset first')
             continue
         # display statistics options 
-        statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
+        statistics_menuItems = np.array(["Mean temperature", "Mean growth rate","Std temperature", "Std growth rate", "Rows", "Mean cold growth rate", "Mean hot growth rate", "Quit"])
         print(filter)
 
         # Display menu options for statistics and ask user to choose a menu item
@@ -133,4 +133,4 @@ while True:
         break
     # End
 
-        
+    
