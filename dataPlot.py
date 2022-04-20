@@ -35,6 +35,7 @@ def dataPlot(data):
     temp = data[np.argsort(data[:,0])]
 
     # Plot each bacteria type present with points and graphs
+    # The for loop tries from 0-3 with the temperature as x (first plot argument) and growth rate as y (second plot argument).
     for i in range(4):
         ax2.plot(temp[np.where(temp[:,2] == i+1)][:,0], temp[np.where(temp[:,2] == i+1)][:,1],marker = 'o',label =str(bacnames[i]))
 
