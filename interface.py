@@ -12,11 +12,12 @@ from dataLoad import dataLoad
 #makes sure that valid number is chosen, if not, returns 
 from input_number import inputNumber
 from displayMenu import displayMenu
-from statistics import dataStatistics
+from statistics_2 import dataStatistics
 from sortBacteria import filterBacteria
 from filterGrowthrate import filterGrowthrate
 from dataPlot import dataPlot
 
+filter = str()
 
 # Define menu items
 menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
@@ -26,7 +27,7 @@ menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generat
 # bacteriatypes_menuItems = np.array(["Salmonella interica", "Bacillus cereus","Listeria", "Brochotrix thermosphacta"])
 # Statistics menu 
 # statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
-filter = str()
+
 # Start
 while True:
     # Display menu options and ask user to choose a menu item
@@ -46,11 +47,12 @@ while True:
         try:
             data
         except:
-            print("You need to load a dataset first")
+            print("You need to load a dataset first\n")
             continue
     # display filter options
         filter_menuItems = np.array(["Bacteria type", "Growth rate","Reset all filters", "Quit"])
         # Display menu options for filtering and ask user to choose a menu item
+        print(filter)
         choice_filter = displayMenu(filter_menuItems)
         # Menu item chosen
         # filters data for bacteria type
@@ -92,9 +94,10 @@ while True:
         except:
             print('You need to load a dataset first')
             continue
-        # display statistics options 
+        # display statistics options and shows applied filter (if a filter is active) 
         statistics_menuItems = np.array(["Mean temperature", "Mean growth rate","Std temperature", "Std growth rate", "Rows", "Mean cold growth rate", "Mean hot growth rate", "Quit"])
-        print(filter)
+        print("")
+        print(filter,"\n")
 
         # Display menu options for statistics and ask user to choose a menu item
         while True:
@@ -106,17 +109,33 @@ while True:
         # print(test)
             if choice_statistics == 1:
                 dataStatistics(data,"mean temperature")
-                print('Mean temperature = {:.2f} °C'.format(dataStatistics(data, 'mean temperature')))
+                print('Mean temperature = {:.2f} °C'.format(dataStatistics(data, 'mean temperature')),"\n")
                 continue
             elif choice_statistics == 2:
                 dataStatistics(data, "mean growth rate")
-                print('Mean growth rate = {:.2f}'.format(dataStatistics(data, 'mean growth rate')))
+                print('Mean growth rate = {:.2f}'.format(dataStatistics(data, 'mean growth rate')),"\n")
+                continue
+            elif choice_statistics ==3:
+                dataStatistics(data, "std temperature")
+                print('Standard temperature = {:.2f}'.format(dataStatistics(data, 'std temperature')),"\n")
+                continue
+            elif choice_statistics == 4:
+                dataStatistics(data, "std growth rate")
+                print('Standard growth rate = {:.2f}'.format(dataStatistics(data, 'std growth rate')),"\n")
+                continue
+            elif choice_statistics == 5:
+                dataStatistics(data, "rows")
+                print('Rows = {:.2f}'.format(dataStatistics(data, 'rows')),"\n")
+                continue
+            elif choice_statistics == 6:
+                dataStatistics(data, "mean cold growth rate")
+                print('Mean cold growth rate = {:.2f}'.format(dataStatistics(data, 'mean cold growth rate')),"\n")
+                continue
+            elif choice_statistics == 7:
+                dataStatistics(data, "mean hot growth rate")
+                print('Mean hot growth rate = {:.2f}'.format(dataStatistics(data, 'mean hot growth rate')),"\n")
                 continue
                            
-            
-            
-                
-    
     # ------------------------------------------------------------------
     # 4. Display plots 
     elif choice == 4: 
@@ -126,6 +145,8 @@ while True:
         except: 
             print("You need to load a dataset first")
             continue
+        print("")
+        print(filter,"\n")
         # Plot the data 
         dataPlot(data)
     # 5. Quit

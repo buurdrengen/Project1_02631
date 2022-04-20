@@ -48,6 +48,7 @@ def dataLoad(filename):
         falseindexBacteria = (indexBacteria == False)
         print('There is bacteria-numbers that does not fit our filters. The problems is in the following line(s), remember 0-index:')
         print(lines[falseindexBacteria])
+        print("")
 
     return data 
 # print(dataLoad('test.txt'))

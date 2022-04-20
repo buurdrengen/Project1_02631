@@ -18,14 +18,14 @@ def filterGrowthrate(data):
     growth_row_number = np.arange(np.size(growth))
 
     # Input the lower bound for the growth rate
-    lower = inputNumber('Please input the lower bound for the growth rate:')
+    lower = inputNumber('Please input the lower bound for the growth rate: ')
 
     # Setting the upper bound equal to the lower bound 
     upper = lower 
 
     # Use a while-loop to make sure the upper bound is greater than the lower bound 
     while upper <= lower: 
-        upper = inputNumber('Please input the upper bound for the growth rate:')
+        upper = inputNumber('Please input the upper bound for the growth rate: ')
 
     # Using the the growth-row and filter this from the upper and lower bound to find the correct rows. 
     growth_row = growth_row_number[(growth > lower) & (growth < upper)]
