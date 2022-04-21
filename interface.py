@@ -18,7 +18,8 @@ from filterGrowthrate import filterGrowthrate
 from dataPlot import dataPlot
 from inputFilename import inputFilename
 
-filter = str()
+filter_bacteria = str()
+filter_growth_rate = str()
 
 # Define menu items
 menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
@@ -49,7 +50,8 @@ while True:
     # display filter options
         filter_menuItems = np.array(["Bacteria type", "Growth rate","Reset all filters", "Quit filter"])
         # Display menu options for filtering and ask user to choose a menu item
-        print(filter)
+        print(filter_bacteria)
+        print(filter_growth_rate)
         choice_filter = displayMenu(filter_menuItems)
         # Menu item chosen
         # filters data for bacteria type
@@ -71,7 +73,7 @@ while True:
             elif choice_bacteriafilter == 4:
                 data = filterBacteria(data, 4)
             
-            filter = f"Filtered for {bacteriatypes_menuItems[int(choice_bacteriafilter-1)]}"
+            filter_bacteria = f"Filtered for {bacteriatypes_menuItems[int(choice_bacteriafilter-1)]}"
             #calls function to filter data for growth rate and returns that data
         elif choice_filter == 2:
             data = filterGrowthrate(data)
@@ -80,7 +82,8 @@ while True:
             print('You chosen to reload the original data, check for sample errors again:')
             print("")
             data = dataLoad(filename)
-            filter = str()
+            filter_growth_rate = str()
+            filter_bacteria = str()
         elif choice_filter == 4:
             continue
     # ------------------------------------------------------------------
@@ -94,7 +97,8 @@ while True:
         # display statistics options and shows applied filter (if a filter is active) 
         statistics_menuItems = np.array(["Mean temperature", "Mean growth rate","Std temperature", "Std growth rate", "Rows", "Mean cold growth rate", "Mean hot growth rate", "Quit statistics"])
         print("")
-        print(filter,"\n")
+        print(filter_bacteria, filter_growth_rate, sep = "\n")
+        print("")
 
         # Display menu options for statistics and ask user to choose a menu item
         while True:
@@ -143,7 +147,8 @@ while True:
             print("You need to load a dataset first")
             continue
         print("")
-        print(filter,"\n")
+        print(filter_bacteria, filter_growth_rate, sep = "\n")
+        print("")
         # Plot the data 
         dataPlot(data)
     # 5. Quit
