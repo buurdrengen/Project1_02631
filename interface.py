@@ -34,8 +34,7 @@ while True:
     if choice == 1:
     # Ask user to input file name
         # function file input 
-        filename = input("Please enter the name of the file you want to load (remember .txt): ")
-        
+        filename = inputFilename()
         data = dataLoad(filename)
 
     # ------------------------------------------------------------------
