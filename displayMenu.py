@@ -2,7 +2,7 @@
 """
 Created on Thu Mar 31 10:01:13 2022
 
-@author: cglitz
+@author: cglitz with much inspiration from Mikkel N. Schmidt, mnsc@dtu.dk, 2015
 """
 import numpy as np
 from input_number import inputNumber

@@ -34,6 +34,3 @@ def filterGrowthrate(data):
     filteredData = data[growth_row, :]
 
     return filteredData
-# print(filterGrowthrate(dataLoad('test.txt')))
-    
-

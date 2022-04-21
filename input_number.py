@@ -2,7 +2,7 @@
 """
 Created on Thu Mar 31 09:23:14 2022
 
-@author: cglitz
+@author: cglitz with much inspiration from Mikkel N. Schmidt, mnsc@dtu.dk, 2015
 """
 
 def inputNumber(prompt):

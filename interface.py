@@ -16,17 +16,12 @@ from statistics_2 import dataStatistics
 from sortBacteria import filterBacteria
 from filterGrowthrate import filterGrowthrate
 from dataPlot import dataPlot
+from inputFilename import inputFilename
 
 filter = str()
 
 # Define menu items
 menuItems = np.array(["Load data", "Filter data", "Display statistics", "Generate plots", "Quit"])
-# display filter options
-# filter_menuItems = np.array(["Bacteria type", "Growth rate","Quit"])
-# Bacteria types menu
-# bacteriatypes_menuItems = np.array(["Salmonella interica", "Bacillus cereus","Listeria", "Brochotrix thermosphacta"])
-# Statistics menu 
-# statistics_menuItems = np.array(["mean temperature", "mean growth rate","std temperature", "std growth rate", "rows", "mean cold growth rate", "mean hot growth rate", "Quit"])
 
 # Start
 while True:
@@ -38,8 +33,10 @@ while True:
     if choice == 1:
     # Ask user to input file name
         # function file input 
-        filename = input("Please enter the name of the file you want to load: ")
+        filename = input("Please enter the name of the file you want to load (remember .txt): ")
+        
         data = dataLoad(filename)
+
     # ------------------------------------------------------------------
     # 2. Filter data
     elif choice == 2:
@@ -50,7 +47,7 @@ while True:
             print("You need to load a dataset first\n")
             continue
     # display filter options
-        filter_menuItems = np.array(["Bacteria type", "Growth rate","Reset all filters", "Quit"])
+        filter_menuItems = np.array(["Bacteria type", "Growth rate","Reset all filters", "Quit filter"])
         # Display menu options for filtering and ask user to choose a menu item
         print(filter)
         choice_filter = displayMenu(filter_menuItems)
@@ -63,8 +60,6 @@ while True:
             # returns filtered data set depending on which bacteria type was chosen 
             if choice_bacteriafilter == 1:
                 data = filterBacteria(data, 1)
-                #filter = f"Filtered for {bacteriatypes_menuItems[choice_bacteriafilter-1]}"
-                # filter = f"Filtered for {bacteriatypes_menuItems[int(choice_bacteriafilter-1)]}"
                 
             elif choice_bacteriafilter == 2:
                 data = filterBacteria(data, 2)
@@ -81,7 +76,9 @@ while True:
         elif choice_filter == 2:
             data = filterGrowthrate(data)
             filter = "Filtered for growth rate." 
-        elif choice_filter == 3: 
+        elif choice_filter == 3:
+            print('You chosen to reload the original data, check for sample errors again:')
+            print("")
             data = dataLoad(filename)
             filter = str()
         elif choice_filter == 4:
@@ -95,7 +92,7 @@ while True:
             print('You need to load a dataset first')
             continue
         # display statistics options and shows applied filter (if a filter is active) 
-        statistics_menuItems = np.array(["Mean temperature", "Mean growth rate","Std temperature", "Std growth rate", "Rows", "Mean cold growth rate", "Mean hot growth rate", "Quit"])
+        statistics_menuItems = np.array(["Mean temperature", "Mean growth rate","Std temperature", "Std growth rate", "Rows", "Mean cold growth rate", "Mean hot growth rate", "Quit statistics"])
         print("")
         print(filter,"\n")
 

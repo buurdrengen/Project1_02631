@@ -33,6 +33,7 @@ def dataLoad(filename):
     # Creating a list for all lines - REMEMBER 0-index. 
     lines = np.arange(np.size(temp))
     # print(lines)
+
     # Using if any() statements, using the indexes from before that are an 'true'/'false'-array, if there is any false statements, it is saved into a new index, which can be accesed from the lines.
     if any(indexTemp == False):
         falseindexTemp = (indexTemp == False)
