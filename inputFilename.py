@@ -12,7 +12,7 @@ def inputFilename():
     files = os.listdir(os.getcwd()) # Find all files in the current working directory. 
 
     while True: 
-        filename = str(input('Please input a file. Remember to put .txt after the name:'))
+        filename = str(input('Please input a file. Remember to put .txt after the name: '))
         if filename in files:
             break
         else:
