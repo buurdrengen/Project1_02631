@@ -80,7 +80,7 @@ while True:
             #calls function to filter data for growth rate and returns that data
         elif choice_filter == 2:
             data = filterGrowthrate(data)
-            filter = "Filtered for growth rate."
+            filter = "Filtered for growth rate." 
         elif choice_filter == 3: 
             data = dataLoad(filename)
             filter = str()
