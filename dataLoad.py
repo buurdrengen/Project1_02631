@@ -39,12 +39,14 @@ def dataLoad(filename):
         falseindexTemp = (indexTemp == False)
         print('There is temperatures that does not fit our filters. The problems is in the following line(s), remember 0-index:')
         print(lines[falseindexTemp])
-
+        print("")
+        
     if any(indexGrowth == False):
         falseindexGrowth = (indexGrowth == False)
         print('There is growth rates that does not fit our filters. The problems is in the following line(s), remember 0-index:')
         print(lines[falseindexGrowth])
-    
+        print("")
+        
     if any(indexBacteria == False):
         falseindexBacteria = (indexBacteria == False)
         print('There is bacteria-numbers that does not fit our filters. The problems is in the following line(s), remember 0-index:')
